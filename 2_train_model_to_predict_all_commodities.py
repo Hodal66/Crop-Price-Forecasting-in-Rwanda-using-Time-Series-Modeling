@@ -57,8 +57,8 @@ for commodity in unique_commodities:
     model = Prophet()
     model.fit(prophet_df)
 
-    # Predict next 3 months
-    future = model.make_future_dataframe(periods=3, freq='M')
+    # Predict next 6 months
+    future = model.make_future_dataframe(periods=6, freq='M')
     predictions = model.predict(future)
 
     predictions_output = predictions[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
@@ -74,7 +74,7 @@ final_predictions_df = pd.concat(combined_predictions, ignore_index=True)
 final_predictions_df = final_predictions_df[['commodity', 'date', 'predicted_price', 'lower_bound', 'upper_bound']]
 
 # Save to one CSV file
-final_path = os.path.join(predictions_dir, "all_commodity_predictions_1.csv")
+final_path = os.path.join(predictions_dir, "all_commodity_predictions_2.csv")
 final_predictions_df.to_csv(final_path, index=False)
 
 # -----------------------------------------
