@@ -12,7 +12,7 @@ Output: Individual predictions CSVs per commodity in ./predictions/
 # STEP 1: Import Required Libraries
 # -----------------------------------------
 import pandas as pd
-from prophet import Prophet
+from prophet import Prophet 
 import os
 
 # -----------------------------------------
@@ -74,7 +74,7 @@ final_predictions_df = pd.concat(combined_predictions, ignore_index=True)
 final_predictions_df = final_predictions_df[['commodity', 'date', 'predicted_price', 'lower_bound', 'upper_bound']]
 
 # Save to one CSV file
-final_path = os.path.join(predictions_dir, "all_commodity_predictions_2.csv")
+final_path = os.path.join(predictions_dir, "all_commodity_predictions_4.csv")
 final_predictions_df.to_csv(final_path, index=False)
 
 # -----------------------------------------
