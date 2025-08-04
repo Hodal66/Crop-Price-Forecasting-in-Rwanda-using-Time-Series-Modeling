@@ -41,12 +41,15 @@ df = df[df['date'] != '#date']  # Remove bad header rows
 # Convert 'date' to datetime and 'price' to numeric (ignore errors)
 df['date'] = pd.to_datetime(df['date'], errors='coerce')
 df['price'] = pd.to_numeric(df['price'], errors='coerce')
+#Rename columns for consistency
+df.rename(columns={'admin1':'province', 'admin2':'district'}, inplace=True)
+print("After converting data types:", df.dtypes)
 
 # -----------------------------------------
 # STEP 5: Drop Useless or Redundant Columns
 # -----------------------------------------
 # Keep only relevant columns for analysis
-columns_to_keep = ['date', 'admin1', 'admin2', 'market', 'commodity', 'unit', 'price']
+columns_to_keep = ['date', 'province', 'district', 'market', 'commodity', 'unit', 'price']
 df = df[columns_to_keep]
 print("After dropping unnecessary columns:", df.shape)
 
@@ -60,7 +63,7 @@ df = df.dropna(subset=['date', 'price'])
 df = df[df['price'] > 0]
 
 # Fill missing categorical values with 'Unknown'
-for col in ['admin1', 'admin2', 'market', 'commodity']:
+for col in ['province', 'district', 'market', 'commodity']:
     df[col] = df[col].fillna('Unknown')
 
 # -----------------------------------------
@@ -86,7 +89,7 @@ print("Final cleaned dataset shape:", df.shape)
 print("Aggregated dataset shape (for Power BI or ML):", grouped_df.shape)
 print("Date range:", df['date'].min(), "to", df['date'].max())
 print("Number of unique commodities:", df['commodity'].nunique())
-print("Number of provinces (admin1):", df['admin1'].nunique())
+print("Number of provinces:", df['province'].nunique())
 
 # -----------------------------------------
 # STEP 10: Export Cleaned Data

@@ -1,206 +1,180 @@
 
-# 🇷🇼 Food Price predicting in Rwanda
+
+````markdown
+# 🌾 Crops Prices Prediction in Rwanda
+
+This project predicts the prices of various food commodities in Rwanda using historical data. It involves data collection, cleaning, exploratory data analysis, modeling, and visualization of results. It also includes Power BI reports for policy-making and decision support.
+
+---
 
 A complete pipeline for **predicting food prices in Rwanda** using historical data from the [World Food Programme](https://data.humdata.org/dataset/wfp-food-prices-for-rwanda), with visual insights powered by **Power BI** and predicting models using **Facebook Prophet**.
 
----
 
 ## 📁 Project Structure
 
-```
-
-.
+```bash
+PROJECT_ON_CROPS_PRICES_FORECAST_RWANDA/
+│
 ├── data/
 │   ├── processed/
-│   │   ├── cleaned\_food\_prices.csv
-│   │   └── processed\_food\_prices.csv
-│   ├── raw/
-│   │   └── wfp\_food\_prices\_rwa.csv
+│   │   ├── cleaned_food_prices.csv
+│   │   └── processed_food_prices.csv
+│   └── raw/
+│       └── wfp_food_prices_rwa.csv
+│
 ├── notebooks/
-│   └── eda\_visualization.ipynb
-├── power\_bi/
-│   └── MuhetoHodal\_Powerbi\_Exam\_Report.pbix
+│   └── eda_visualization.ipynb
+│
+├── power_bi/
+│   └── MuhetoHodal_Powerbi_Exam_Report.pbix
+│
 ├── predictions/
-│   ├── all\_commodity\_predictions.csv
-│   ├── all\_commodity\_predictions\_1.csv
-│   └── all\_commodity\_predictions\_2.csv
-├── report/
-├── screen\_shoots/
-│   └── cleaning\_data\_1.JPG
+│   ├── all_commodity_predictions.csv
+│   ├── all_commodity_predictions_1.csv
+│   └── all_commodity_predictions_2.csv
+│
+├── reports/
+│   ├── output_images_visualization/
+│   ├── power_bi_screen_shoots/
+│   └── screen_shoots/
+│
+├── 1_clean_food_prices_data.py
+├── 2_train_model_to_predict_all_commodities.py
 ├── .gitignore
-├── requirements.txt
-├── 1\_clean\_food\_prices\_data.py
-├── 2\_train\_model\_to\_predict\_all\_commodities.py
 └── README.md
-
 ````
 
 ---
 
-## 🎯 Objective
+## 📌 Objective
 
-To **analyze**, **clean**, and **forecast** food prices in Rwanda by commodity and location, and export results for dynamic visualization in **Power BI**.
+To build a machine learning pipeline that predicts the prices of food commodities in Rwanda and provides actionable insights for:
 
----
-
-## 📌 Key Features
-
-- ✅ Cleaning & preprocessing historical data
-- 📊 Exploratory Data Analysis using Jupyter
-- 🤖 predicting with Prophet
-- 📈 Exported forecasted datasets for Power BI dashboard
-- 📎 Power BI Report file included
-- 🗂️ Organized by modular scripts and folders
+* Farmers (to determine best times to sell)
+* Policymakers (for intervention and price control)
+* Traders and Investors (to identify market trends)
 
 ---
 
-## 🛠️ Setup Instructions
+## 🧾 Dataset Description
 
-1. **Clone the Repository**
-
-```bash
-git clone https://github.com/yourusername/food-price-rwanda.git
-cd food-price-rwanda
-````
-
-2. **Create Virtual Environment & Install Requirements**
-
-```bash
-python -m venv venv
-source venv/bin/activate      # or `venv\Scripts\activate` on Windows
-pip install -r requirements.txt
-```
-
-3. **Run Cleaning Script**
-
-```bash
-python 1_clean_food_prices_data.py
-```
-
-4. **Train the Model on All Commodities**
-
-```bash
-python 2_train_model_to_predict_all_commodities.py
-```
+* **Source**: World Food Programme (WFP) Rwanda dataset
+* **File**: `wfp_food_prices_rwa.csv`
+* **Content**: Prices of various food items by market, date, and unit
 
 ---
 
-## 🧼 Data Cleaning Pipeline
+## 🧹 Data Processing Steps
 
-📄 **File**: `1_clean_food_prices_data.py`
+| Step               | Description                                            |
+| ------------------ | ------------------------------------------------------ |
+| 🔸 Raw Data Import | Loaded from `data/raw/wfp_food_prices_rwa.csv`         |
+| 🔸 Cleaning        | Performed in `1_clean_food_prices_data.py`             |
+| 🔸 Output Files    | `cleaned_food_prices.csv`, `processed_food_prices.csv` |
 
-### 🔍 Steps:
-
-```py
-# 🟢 STEP 1: Load raw dataset from WFP
-# 🟢 STEP 2: Remove invalid rows and clean column formats
-# 🟢 STEP 3: Handle missing values (admin1, admin2, etc.)
-# 🟢 STEP 4: Filter invalid prices and convert datatypes
-# 🟢 STEP 5: Aggregate prices by month and commodity
-# 🟢 STEP 6: Export cleaned dataset
-```
+Processed datasets are stored in `data/processed/`.
 
 ---
 
-## 📈 predicting (Prophet)
+## 📊 Exploratory Data Analysis (EDA)
 
-📄 **File**: `2_train_model_to_predict_all_commodities.py`
+Notebook: `eda_visualization.ipynb`
 
-### 🔮 Key Features:
+Key insights explored:
 
-* Forecasts prices for **each commodity individually**
-* Trains Prophet model per group and concatenates results
-* Saves output to `predictions/all_commodity_predictions.csv`
+* Price variation over time
+* Market-specific trends
+* Outlier detection
+* Seasonal patterns
 
----
-
-## 📊 Power BI Dashboard
-
-📁 **Power BI File**: `MuhetoHodal_Powerbi_Exam_Report.pbix`
-
-Features:
-
-* Filter dropdowns for **commodity**, **date**, **market**
-* Forecast visualization per commodity
-* Interactive price trends over time
-
-✅ Make sure to import:
-`predictions/all_commodity_predictions.csv` and
-`data/processed/processed_food_prices.csv`
-
-🛠️ If dropdown shows only 2 commodities:
-
-* Ensure table has **no filters applied**
-* Confirm dataset is **fully refreshed** under *Transform Data*
+Visual outputs available in:
+`reports/output_images_visualization/`
 
 ---
 
-## 📸 Screenshots
+## 🤖 Modeling
 
-| Cleaning Stage                                   | predicting Output                       |
-| ------------------------------------------------ | ---------------------------------------- |
-| ![cleaning](./screen_shoots/cleaning_data_1.JPG) | *(Add a forecast screenshot if desired)* |
+Script: `2_train_model_to_predict_all_commodities.py`
 
----
+* Algorithms used: Linear Regression, Random Forest, etc.
+* Target: Predict prices of multiple food commodities
+* Input: Processed features (time, market, product, etc.)
+* Output: Prediction results saved in CSV format
 
-## 🔮 Sample Forecast Output
+Prediction outputs:
 
-```csv
-commodity,ds,yhat,yhat_lower,yhat_upper
-Beans (dry),2024-01-01,385.12,350.90,410.67
-Beans (dry),2024-02-01,392.41,358.70,420.23
-Maize,2024-01-01,265.35,240.21,292.77
-...
-```
+* `all_commodity_predictions.csv`
+* `all_commodity_predictions_1.csv`
+* `all_commodity_predictions_2.csv`
 
 ---
 
-## 🧠 Modeling Strategy
+## 📈 Power BI Dashboard
 
-* Model Used: **Facebook Prophet** (preferred for time series with trends & seasonality)
-* Trained per-commodity using a modular pipeline
-* Granularity: **monthly average prices**
+Power BI file: `MuhetoHodal_Powerbi_Exam_Report.pbix`
+Screenshots available in:
 
----
+* `reports/power_bi_screen_shoots/`
+* `reports/screen_shoots/`
 
-## ✅ Achievements & Commits
+Key features:
 
-* ✔️ Data cleaned and prepared for predicting
-* ✔️ Prophet model trained on all commodities
-* ✔️ Forecasts exported for Power BI
-* ✔️ Power BI report built with filters and trends
-* ✔️ All deliverables structured, reproducible, and automated
+* Interactive filters by market and product
+* Monthly trend lines
+* Price comparison per province
 
 ---
 
-## 📦 Requirements
+## 📋 Reporting
 
-```txt
-pandas
-numpy
-matplotlib
-prophet
-jupyter
-```
+Structured reports and images provided in:
 
-(See `requirements.txt` for full list)
+* `reports/output_images_visualization/`
+* `reports/screen_shoots/`
+
+Visualizations include:
+
+* Price fluctuation trends
+* Prediction vs actual price comparison
+* Commodity-wise forecasting
 
 ---
 
-## 👤 Author
+## 🛠️ Technologies Used
+
+* **Languages**: Python, DAX (Power BI)
+* **Libraries**: Pandas, Matplotlib, Scikit-learn, Seaborn
+* **BI Tool**: Power BI
+* **Environment**: Jupyter Notebooks, Visual Studio Code
+
+---
+
+## 🧠 Key Insights & Recommendations
+
+* 🔍 **Seasonality Detected**: Prices peak in certain months—important for storage and logistics.
+* 📉 **Unstable Pricing**: Some markets show volatile patterns—monitoring recommended.
+* 📊 **Prediction Models Useful**: Accuracy sufficient for short-term pricing strategies.
+
+---
+
+## ✅ Future Enhancements
+
+* Include real-time API feeds for pricing
+* Introduce weather and inflation variables
+* Develop a dashboard web app with live data updates
+
+---
+
+## 🙌 Author
 
 **Muheto Hodal**
-📧 [hodalmuheto@gmail.com](mailto:hodalmuheto@gmail.com)
-📍 Rwanda
-💼 \[LinkedIn: ](https://www.linkedin.com/in/muheto-hodal-23311a211/)
+Power BI | Big Data Analytics | Python Developer
+📫 Email: \[[mhthodol@gmail.com](mailto:mhthodol@gmail.com)]
 
----
+🔗 LinkedIn: [https://www.linkedin.com/in/muheto-hodal-006568130/](https://www.linkedin.com/in/muheto-hodal-006568130/)
 
-## 📄 License
-
-This project is licensed under the MIT License — see the `LICENSE` file for details.
+Power Point: \[[PowerPoint](https://gamma.app/docs/Food-Price-Prediction-and-Visualization-Using-Python-Power-BI-18rdur5xclu7q4k)]
 
 ---
 
 ```
-
