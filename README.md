@@ -1,7 +1,7 @@
-
-
-````markdown
-# 🌾 Crops Prices Prediction in Rwanda
+---
+##🌾 Crops Prices Prediction in Rwanda
+---
+## Introduction
 
 This project predicts the prices of various food commodities in Rwanda using historical data. It involves data collection, cleaning, exploratory data analysis, modeling, and visualization of results. It also includes Power BI reports for policy-making and decision support.
 
@@ -9,8 +9,8 @@ This project predicts the prices of various food commodities in Rwanda using his
 
 A complete pipeline for **predicting food prices in Rwanda** using historical data from the [World Food Programme](https://data.humdata.org/dataset/wfp-food-prices-for-rwanda), with visual insights powered by **Power BI** and predicting models using **Facebook Prophet**.
 
-
 ## 📁 Project Structure
+````markdown
 
 ```bash
 PROJECT_ON_CROPS_PRICES_FORECAST_RWANDA/
@@ -169,12 +169,43 @@ Visualizations include:
 
 **Muheto Hodal**
 Power BI | Big Data Analytics | Python Developer
+
 📫 Email: \[[mhthodol@gmail.com](mailto:mhthodol@gmail.com)]
 
-🔗 LinkedIn: [https://www.linkedin.com/in/muheto-hodal-006568130/](https://www.linkedin.com/in/muheto-hodal-006568130/)
+🔗 LinkedIn: [Get_Connected_Here](https://www.linkedin.com/in/muheto-hodal-006568130/)
 
-Power Point: \[[PowerPoint](https://gamma.app/docs/Food-Price-Prediction-and-Visualization-Using-Python-Power-BI-18rdur5xclu7q4k)]
+📋 Power Point: \[[PowerPoint](https://food-price-prediction-an-eu1ph98.gamma.site/)]
+
+📈 Dataset: \[[Download_Here](https://data.humdata.org/dataset/wfp-food-prices-for-rwanda)]
 
 ---
+
+## ☄ Screenshoots
+
+**Cleaning, Visualisation $ Training Process**
+
+![cleaning_data_2](https://github.com/user-attachments/assets/9ef3b29a-a1cb-4f18-982b-7f3c442e97e8)
+![cleaning_data_1](https://github.com/user-attachments/assets/fad47e99-c173-4f64-acc6-283e9dc8913f)
+![training_model_1](https://github.com/user-attachments/assets/00483785-5b98-407e-91e6-3310436b251f)
+![data_visualizations_1](https://github.com/user-attachments/assets/2349b1a1-06c4-4945-bfa6-c0388a0902ea)
+![data_importing_1](https://github.com/user-attachments/assets/4355f7a9-f41a-4b4b-b767-5462e6e8af67)
+<img width="3000" height="1800" alt="price_distribution_by_province" src="https://github.com/user-attachments/assets/f242cb29-3f04-4541-b2e1-e2e8c47fb68c" />
+<img width="3000" height="1500" alt="most_reported_commodities" src="https://github.com/user-attachments/assets/0ec5f20f-3157-450c-93c4-0b443a36b707" />
+<img width="4200" height="3000" alt="monthly_price_heatmap_top_commodities" src="https://github.com/user-attachments/assets/8b3518b5-c56e-406f-a3e2-a68b809ae3b3" />
+<img width="3600" height="1800" alt="maize_price_trend_over_time" src="https://github.com/user-attachments/assets/5b09c40c-b511-4760-9b32-499925932c20" />
+<img width="3000" height="1800" alt="top_avg_price" src="https://github.com/user-attachments/assets/33cf1e4c-9880-4751-bf2e-0d04296af6dc" />
+<img width="3000" height="1500" alt="top_10_commodities" src="https://github.com/user-attachments/assets/a927e10f-c235-4d4c-a505-ae689996129d" />
+<img width="2400" height="1200" alt="records_per_province" src="https://github.com/user-attachments/assets/12d321e6-3e00-4a70-ae85-461084d276e8" />
+<img width="3000" height="1800" alt="avg_price_barh_avg_price_rwf" src="https://github.com/user-attachments/assets/eae7c7f9-d107-48e6-b01e-c4d0070e7e5c" />
+<img width="3600" height="1800" alt="beans_price_trend" src="https://github.com/user-attachments/assets/2d728793-5e48-493b-acc5-901a44b4df56" />
+
+**Powerbi Dasbord**
+
+![Dashboard_for_DataVisualisation](https://github.com/user-attachments/assets/b664b2a4-4f89-4b9d-b5d0-63e15218952b)
+![All_Tables](https://github.com/user-attachments/assets/07f511a9-a2c6-4bf2-91a8-6a893b91f55b)
+![Last_Prediction_Table_Contents](https://github.com/user-attachments/assets/74cc2f3c-a913-4312-92bc-ed522c029961)
+![Dashboard_for_Predictions_Model_2](https://github.com/user-attachments/assets/8cd834e6-2d54-44b4-8a5b-2658b42ca06f)
+![Dashboard_for_Predictions_Model_1](https://github.com/user-attachments/assets/927f25ee-7e6d-4be3-9a25-0abd924924e1)
+
 
 ```
